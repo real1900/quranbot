@@ -70,7 +70,7 @@ const IndexWordsSchema = {
     appendix: {type: 'QAppendices'},
     parentWord: {type: 'QIndexWords'},
     children: {type: 'linkingObjects', objectType: 'QIndexWords', property: 'parentWord'},
-    verses: {type: 'QVerse[]?', default: [QVerse]()},
+    verses: {type: 'QVerse[]'},
   }
 };
 
