@@ -69,8 +69,8 @@ const IndexWordsSchema = {
     word_id:{type: 'int?',    default: 0},
     appendix: {type: 'QAppendices'},
     parentWord: {type: 'QIndexWords'},
-    children: {type: 'linkingObjects', objectType: 'QIndexWords', property: 'parentWord'}
-
+    children: {type: 'linkingObjects', objectType: 'QIndexWords', property: 'parentWord'},
+    verses: {type: 'QVerse[]?', default: [QVerse]()},
   }
 };
 
