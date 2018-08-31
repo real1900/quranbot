@@ -99,7 +99,23 @@ const QAppendicesSchema = {
     let verses = realm.objects('QVerse');
 
     verses.forEach(verse => {
-      map[verse.whichSura.sura_no + ":" + verse.verse_no] = verse.english_version
+
+      var verseKey = verse.whichSura.sura_no + ":" + verse.verse_no
+
+      var verseValue = ""
+
+      if (verse.subtitle){
+
+        verseValue +=  "\t" + verse.subtitle  + "\n" 
+      } 
+
+      verseValue += "[" + verseKey+ "] " + verse.english_version
+
+      if (verse.footnote){
+        verseValue +=   "\n\n" + verse.footnote
+      } 
+
+      map[verseKey] = "```" + verseValue + "```"
     });
 
     process.on('unhandledRejection', err => {
