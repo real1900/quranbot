@@ -115,7 +115,7 @@ const QAppendicesSchema = {
         verseValue +=   "\n\n" + verse.footnote
       } 
 
-      map[verseKey] = "```" + verseValue + "```"
+      map[verseKey] =  verseValue 
     });
 
     process.on('unhandledRejection', err => {
